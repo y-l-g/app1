@@ -16,8 +16,8 @@ services:
         - path: ./public
           action: sync
           target: /app/public
-    build: .
-    image: localhost:6000/app1
+    # build: .
+    image: ghcr.io/y-l-g/app1
     volumes:
       - caddy_data:/data
       - caddy_config:/config
