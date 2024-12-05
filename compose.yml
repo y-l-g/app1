@@ -1,0 +1,27 @@
+services:
+  db:
+    image: mysql
+    volumes:
+      - todo-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: database
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+    networks:
+      - proxy
+  app:
+    # build: .
+    image: ghcr.io/y-l-g/app1:main
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - proxy
+volumes:
+  caddy_data:
+  caddy_config:
+  todo-mysql-data:
+networks:
+  proxy:
+    external: true
