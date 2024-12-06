@@ -5,7 +5,7 @@
 	}
 }
 
-http://localhost:80 {
+http://0.0.0.0:80 {
     root * public/
     php_server
 }
