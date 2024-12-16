@@ -34,6 +34,7 @@ volumes:
   todo-mysql-data:
 networks:
   proxy:
+    name: proxy
     external: true
 secrets:
   app1_db_password:
