@@ -1,5 +1,10 @@
 <?php
-$pdo = new PDO("mysql:host=db;dbname=database", "username", "password");
+$dbHost = trim(file_get_contents(getenv('DB_HOST_FILE')));
+$dbName = trim(file_get_contents(getenv('DB_NAME_FILE')));
+$dbUser = trim(file_get_contents(getenv('DB_USER_FILE')));
+$dbPassword = trim(file_get_contents(getenv('DB_PASSWORD_FILE')));
+
+$pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
 
 $pdo->exec("CREATE TABLE IF NOT EXISTS items (
     id INT AUTO_INCREMENT PRIMARY KEY,

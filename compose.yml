@@ -4,18 +4,32 @@ services:
     volumes:
       - todo-mysql-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: database
-      MYSQL_USER: username
-      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/root_db_password
+      MYSQL_DATABASE_FILE: /run/secrets/db_name
+      MYSQL_USER_FILE: /run/secrets/db_user
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+      - db_user
+      - db_name
+      - root_db_password
     networks:
       - proxy
-  app:
-    # build: .
+  app1:
     image: ghcr.io/y-l-g/app1:main
     volumes:
       - caddy_data:/data
       - caddy_config:/config
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/root_db_password
+      MYSQL_DATABASE_FILE: /run/secrets/db_name
+      MYSQL_USER_FILE: /run/secrets/db_user
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+    secrets:
+      - db_password
+      - db_user
+      - db_name
+      - root_db_password
     networks:
       - proxy
 volumes:
