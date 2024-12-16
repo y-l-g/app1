@@ -39,3 +39,12 @@ volumes:
 networks:
   proxy:
     external: true
+secrets:
+  db_password:
+    external: true
+  db_user:
+    external: true
+  db_name:
+    external: true
+  root_db_password:
+    external: true
