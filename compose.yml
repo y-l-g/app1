@@ -28,6 +28,8 @@ services:
       - app1_db_name
     networks:
       - proxy
+    ports:
+      - "80:80"
 volumes:
   caddy_data:
   caddy_config:
