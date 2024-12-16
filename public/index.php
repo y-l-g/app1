@@ -1,8 +1,8 @@
 <?php
-$dbHost = trim(file_get_contents(getenv('DB_HOST_FILE')));
-$dbName = trim(file_get_contents(getenv('DB_NAME_FILE')));
-$dbUser = trim(file_get_contents(getenv('DB_USER_FILE')));
-$dbPassword = trim(file_get_contents(getenv('DB_PASSWORD_FILE')));
+$dbHost = trim(file_get_contents(getenv('MYSQL_HOST_FILE')));
+$dbName = trim(file_get_contents(getenv('MYSQL_NAME_FILE')));
+$dbUser = trim(file_get_contents(getenv('MYSQL_USER_FILE')));
+$dbPassword = trim(file_get_contents(getenv('MYSQL_PASSWORD_FILE')));
 
 $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
 
