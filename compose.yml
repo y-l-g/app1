@@ -39,7 +39,6 @@ volumes:
   todo-mysql-data:
 networks:
   proxy:
-    name: proxy
     external: true
   app1:
     driver: overlay
