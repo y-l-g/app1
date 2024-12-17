@@ -13,6 +13,8 @@ services:
       - app1_db_user
       - app1_db_name
       - app1_root_db_password
+    networks:
+      - app1
   app:
     image: ghcr.io/y-l-g/app1:main
     volumes:
@@ -27,6 +29,7 @@ services:
       - app1_db_user
       - app1_db_name
     networks:
+      - app1
       - proxy
     ports:
       - "80:80"
@@ -35,6 +38,7 @@ volumes:
   caddy_config:
   todo-mysql-data:
 networks:
+  app1:
   proxy:
     name: proxy
     external: true
