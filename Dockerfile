@@ -1,7 +1,9 @@
 FROM dunglas/frankenphp
 
 RUN install-php-extensions \
-    pdo_mysql 
+    pdo_mysql
+
+RUN apt-get install -y nano
 
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
