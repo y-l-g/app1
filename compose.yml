@@ -31,6 +31,8 @@ services:
     networks:
       - proxy
       - app1
+    expose:
+      - "9000"
 volumes:
   caddy_data:
   caddy_config:
