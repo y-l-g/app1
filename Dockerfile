@@ -3,7 +3,8 @@ FROM dunglas/frankenphp
 RUN install-php-extensions \
     pdo_mysql
 
-RUN apt-get install -y nano
+RUN apk update
+RUN apk add nano
 
 COPY ./Caddyfile /etc/caddy/Caddyfile
 
