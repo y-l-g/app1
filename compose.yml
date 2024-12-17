@@ -39,6 +39,8 @@ volumes:
   todo-mysql-data:
 networks:
   app1:
+    driver: overlay
+    attachable: true
   proxy:
     name: proxy
     external: true
