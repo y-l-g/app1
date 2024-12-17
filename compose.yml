@@ -31,8 +31,6 @@ services:
     networks:
       - proxy
       - app1
-    ports:
-      - "80:80"
 volumes:
   caddy_data:
   caddy_config:
