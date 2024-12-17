@@ -1,5 +1,5 @@
 <?php
-$dbHost = "app1_db";
+$dbHost = "db";
 $dbName = trim(file_get_contents(getenv('MYSQL_DATABASE_FILE')));
 $dbUser = trim(file_get_contents(getenv('MYSQL_USER_FILE')));
 $dbPassword = trim(file_get_contents(getenv('MYSQL_PASSWORD_FILE')));
