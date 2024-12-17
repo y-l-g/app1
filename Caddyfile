@@ -2,7 +2,7 @@
 	frankenphp
 }
 
-http://localhost:9000 {
+http://0.0.0.0:9000 {
     root * public/
     php_server
 }
