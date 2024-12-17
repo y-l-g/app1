@@ -4,8 +4,11 @@ $dbName = trim(file_get_contents(getenv('MYSQL_DATABASE_FILE')));
 $dbUser = trim(file_get_contents(getenv('MYSQL_USER_FILE')));
 $dbPassword = trim(file_get_contents(getenv('MYSQL_PASSWORD_FILE')));
 
-$pdo = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPassword);
-
+$pdo = new PDO(
+    "mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4",
+    $dbUser,
+    $dbPassword,
+);
 $pdo->exec("CREATE TABLE IF NOT EXISTS items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL
