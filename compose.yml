@@ -38,8 +38,6 @@ volumes:
   caddy_config:
   todo-mysql-data:
 networks:
-  proxy:
-    external: true
   app1:
     driver: overlay
     attachable: true
