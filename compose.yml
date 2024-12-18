@@ -29,7 +29,6 @@ services:
       - app1_db_user
       - app1_db_name
     networks:
-      - proxy
       - app1
     expose:
       - "9000"
