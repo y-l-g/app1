@@ -1,6 +1,6 @@
 <?php
 $dbHost = trim((getenv('MYSQL_SERVICE_HOST')));
-$dbName = trim(file_get_contents(getenv('MYSQL_DATABASE_FILE')));
+$dbName = "app";
 $dbUser = trim(file_get_contents(getenv('MYSQL_USER_FILE')));
 $dbPassword = trim(file_get_contents(getenv('MYSQL_PASSWORD_FILE')));
 
